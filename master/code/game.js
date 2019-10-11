@@ -3,7 +3,7 @@ export default class Game extends Phaser.Scene {
     super({ key: 'main' });
   }
   preload() {  
-    this.preload.image('watermelon', 'watermelon.png');
+    // this.preload.image('watermelon', 'watermelon.png');
   }
 
   create() {
