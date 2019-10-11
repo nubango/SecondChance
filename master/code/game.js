@@ -7,7 +7,7 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {
-    this.scene.start('scene');
+    // this.scene.start('scene');
   }
 
   update(time, delta) {    
