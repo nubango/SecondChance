@@ -1,14 +1,38 @@
-*{
+* {
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
 }
 
-#canvas {
-    background:url(../resources/images/1000x500.png);
+#horizontal {
+    position: relative;
+    margin: 5vh auto;
+    width: 1000px;
+    height: 500px;
 }
 
 #juego {
+    background: url(../resources/images/1000x500.png);
+}
+
+#vertical {
+    display: none;
+}
+
+@media all and (orientation: portrait) {
+    #contenedor {
+        display: none;
+    }
     
+    #vertical {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+        background: url(../resources/images/gire_pantalla.png);
+        background-size: cover;
+        background-position: center;
+    }
 }

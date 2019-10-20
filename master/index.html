@@ -1,60 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <title>Origami Dojo</title>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="./resources/images/peach.png" type="image/png" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1">
-    <script src="phaser.min.js"></script>
-    <link rel="stylesheet" href="css/game.css">
-    <link rel="stylesheet" href="css/fontello.css">
-    <link rel="stylesheet" href="css/canvas.css" type="text/css" media="">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Origami Dojo</title>
+        <link rel="shortcut icon" href="./resources/images/peach.png" type="image/png" />
+        
+        <script src="phaser.min.js"></script>
+        
+        
+        <link href="css/game.css" rel="stylesheet">
+        <link href="css/menu.css" rel="stylesheet">
+        <link href="css/fontello.css" rel="stylesheet" >
+        <link href="css/canvas.css" type="text/css" rel="stylesheet" media="">
+    </head>
     
-</head>
-
-<body>
-    <header>
-        <div class="container">
-            <h1 class="icon-gamepad"> ORIGAMI DOJO</h1>
-            <input type="checkbox" id="menu-bar">
-            <label class="icon-menu" for="menu-bar"></label>
-            <nav class = "menu">
-                <a href="">Menu</a>
-                <a href="">Mascotas</a>
-                <a href="">Blog</a>
-                <a href="">Contacto</a>
-            </nav>
+    <body>
+        <header>
+            <div class="container">
+                <h1 class="icon-gamepad"> ORIGAMI DOJO</h1>
+                <input type="checkbox" id="menu-bar">
+                <label class="icon-menu" for="menu-bar"></label>
+                <nav class = "menu">
+                    <a href="">Menu</a>
+                    <a href="">Mascotas</a>
+                    <a href="">Blog</a>
+                    <a href="">Contacto</a>
+                </nav>
+            </div>
+        </header>
+        
+        <div id="vertical"></div>
+        <div id="horizontal">
+            <canvas id="juego" width="1000px" height="500px"> </canvas>
         </div>
-    </header>
-    
-    <main>
-        <div id="juego">
-            <canvas id="canvas"  width="1000px" height="500px"></canvas>
-        </div>
-    </main>
-    <!--
-    <script type="module">
-        import Game from './code/game.js';
-
-        var config = {
-            type: Phaser.AUTO,
-            width: 1400,
-            height: 800,
-            pixelArt: true,
-            input: {
-                gamepad: true
-            },
-            scale: {
-                mode: Phaser.Scale.FIT,
-                autoCenter: Phaser.Scale.CENTER_BOTH
-            },
-            scene: [ Game ],
-            physics: { default: 'arcade', arcade: { gravity: { y: 400 }, debug: false } }
-        };
-        new Phaser.Game(config);
-    </script>
-    <canvas width="1400" height="800" style="image-rendering: pixelated; margin-left: -414px; margin-top: 0px;"></canvas>
--->
-</body>
-
+    </body>
 </html>
