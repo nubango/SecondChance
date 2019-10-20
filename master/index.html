@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+    <title>Origami Dojo</title>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="./resources/images/favicon.png" type="image/png" />
-    <meta name="viewport" content="width=device-width, initial-scale=2.0">
-    <link rel="stylesheet" href="game.css">
+    <link rel="shortcut icon" href="./resources/images/peach.png" type="image/png" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1">
     <script src="phaser.min.js"></script>
-
-    <title>¡Juego con Phaser!</title>
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="css/canvas.css" type="text/css" media="">
+    
 </head>
 
 <body>
-    <h1>Juego con Phaser</h1>
+    <header>
+        <div class="container">
+            <h1 class="icon-gamepad"> ORIGAMI DOJO</h1>
+            <input type="checkbox" id="menu-bar">
+            <label class="icon-menu" for="menu-bar"></label>
+            <nav class = "menu">
+                <a href="">Menu</a>
+                <a href="">Mascotas</a>
+                <a href="">Blog</a>
+                <a href="">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div id="juego">
+            <canvas id="canvas"  width="1000px" height="500px"></canvas>
+        </div>
+    </main>
+    <!--
     <script type="module">
         import Game from './code/game.js';
 
@@ -34,6 +54,7 @@
         new Phaser.Game(config);
     </script>
     <canvas width="1400" height="800" style="image-rendering: pixelated; margin-left: -414px; margin-top: 0px;"></canvas>
+-->
 </body>
 
 </html>
