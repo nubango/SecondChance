@@ -10,6 +10,7 @@ header label {
 }
 
 .menu {
+    font-size: 150%;
     position: absolute;
     top: 0;
     left: 0;

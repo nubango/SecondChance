@@ -37,4 +37,6 @@ header .container {
 body {
     font-family: 'Kristi', cursive;
     overflow: hidden;
+    
+    font-size: 150%;
 }

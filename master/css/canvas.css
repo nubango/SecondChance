@@ -7,9 +7,18 @@
 
 #horizontal {
     position: relative;
-    margin: 5vh auto;
+    margin: 10vh auto;
     width: 1000px;
     height: 500px;
+    background: red;
+}
+
+#horizontal button {
+    display: block;
+    position: relative;
+    margin: 5px 0;
+    padding: 10px;
+    cursor: pointer;
 }
 
 #juego {
@@ -21,7 +30,7 @@
 }
 
 @media all and (orientation: portrait) {
-    #contenedor {
+    #horizontal {
         display: none;
     }
     
@@ -29,9 +38,9 @@
         display: block;
         position: fixed;
         width: 100%;
-        height: 100vh;
+        height: 500px;
         z-index: 1;
-        background: url(../resources/images/gire_pantalla.png);
+        background: url(../resources/images/gira1000x500.png);
         background-size: cover;
         background-position: center;
     }
