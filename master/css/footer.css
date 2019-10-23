@@ -1,0 +1,36 @@
+footer .contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 25px;
+}
+.copy {
+    color: #fff;
+    font-size: 20px;
+}
+
+.git {
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+}
+
+.sociales a {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (min-width: 768px){
+    .git {
+        width: auto;
+    }
+    footer .contenedor {
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1024px){
+    .contenedor {
+        width: 1000px;
+    }
+}

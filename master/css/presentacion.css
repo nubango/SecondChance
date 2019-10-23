@@ -6,6 +6,7 @@
 }*/
 
 #presentacion {
+    background: #333;
     align-items: center;
 }
 /*#presentacion .contenedor {
@@ -15,10 +16,12 @@
 }*/
 
 #presentacion article {
-    /*margin: 15px;*/
+    background: #333;
+    margin: 15px;
 }
 
 #presentacion img {
+    margin-top: 10px;
     width: 100%;
 }
 /*https://www.youtube.com/watch?v=nOjxVmN-obU*/

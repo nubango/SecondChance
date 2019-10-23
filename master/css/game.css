@@ -1,6 +1,7 @@
 @import url(menu.css);
 @import url(canvas.css);
 @import url(presentacion.css);
+@import url(footer.css);
 @font-face {
     font-family: adventpro;
     src: url(../font/adventpro-regular.ttf)
@@ -17,6 +18,7 @@
 body {
     font-family: adventpro, cursive;
     font-size: 130%;
+    background-color: #555;
 }
 
 header {
