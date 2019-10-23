@@ -1,0 +1,28 @@
+/*.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}*/
+
+#presentacion {
+    background: #333;
+    align-items: center;
+}
+/*#presentacion .contenedor {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}*/
+
+#presentacion article {
+    background: #333;
+    margin: 15px;
+}
+
+#presentacion img {
+    margin-top: 10px;
+    width: 100%;
+}
+/*https://www.youtube.com/watch?v=nOjxVmN-obU*/
+/*https://www.youtube.com/watch?v=fu1EPyRDGt0*/

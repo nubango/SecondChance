@@ -1,39 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Origami Slash</title>
+        <link rel="shortcut icon" href="./resources/images/web/OrigamiSlashWeb.png" type="image/png"/>
+        
+        <script src="phaser.min.js"></script>
+        <link href="css/game.css" rel="stylesheet">
+        <link href="css/fontello.css" rel="stylesheet" >
+    </head>
+    
+    <body>
+        <header>
+            <div class="contenedor">
+                <h1 class="icon-gamepad"> ORIGAMI SLASH</h1>
+                <input type="checkbox" id="menu-bar">
+                <label class="icon-menu" for="menu-bar"></label>
+                <nav class = "menu">
+                    <a href="">Estos</a>
+                    <a href="">botones</a>
+                    <a href="">son</a>
+                    <a href="">inutiles</a>
+                </nav>
+            </div>
+        </header>
+        
+        <main>
+            <section class="pantalla">
+                <div id="vertical"></div>
+                <div id="horizontal">
+                    <canvas id="juego" width="1000px" height="500px"></canvas>
+                    <!--<button id="boton-ampliar" onclick="ampliar()">Ampliar canvas</button>-->
+                </div>
+            </section>
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="./resources/images/favicon.png" type="image/png" />
-    <meta name="viewport" content="width=device-width, initial-scale=2.0">
-    <link rel="stylesheet" href="game.css">
-    <script src="phaser.min.js"></script>
-
-    <title>¡Juego con Phaser!</title>
-</head>
-
-<body>
-    <h1>Juego con Phaser</h1>
-    <script type="module">
-        import Game from './code/game.js';
-
-        var config = {
-            type: Phaser.AUTO,
-            width: 1400,
-            height: 800,
-            pixelArt: true,
-            input: {
-                gamepad: true
-            },
-            scale: {
-                mode: Phaser.Scale.FIT,
-                autoCenter: Phaser.Scale.CENTER_BOTH
-            },
-            scene: [ Game ],
-            physics: { default: 'arcade', arcade: { gravity: { y: 400 }, debug: false } }
-        };
-        new Phaser.Game(config);
-    </script>
-    <canvas width="1400" height="800" style="image-rendering: pixelated; margin-left: -414px; margin-top: 0px;"></canvas>
-</body>
-
+            <section id="presentacion">
+                <div class="contenedor">
+                    <article>
+                        <img class="image" src="./resources/images/web/FondoPresentacionS.png">
+                    </article>
+                    <article>
+                        <img class="image" src="./resources/images/web/FruitNinja.jpg">
+                    </article>
+                    <!--<article>
+                        <img class="image" src="./resources/images/web/FruitNinja3.jpg">
+                    </article>-->
+                    <article>
+                        <img class="image" src="./resources/images/web/DiagramasPresentacion.png">
+                    </article>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="contenedor">
+                <p class="copy"> Origami Slash 2019</p>
+                <div class="git"></div>
+                <a class="icon-github-circled-alt2" href="https://github.com/nubango/SecondChance"></a>
+            </div>
+        </footer>
+        <script src="code/canvas.js"></script>
+    </body>
 </html>

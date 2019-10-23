@@ -1,0 +1,57 @@
+@import url(menu.css);
+@import url(canvas.css);
+@import url(presentacion.css);
+@import url(footer.css);
+@font-face {
+    font-family: adventpro;
+    src: url(../font/adventpro-regular.ttf)
+}
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: adventpro, cursive;
+    font-size: 130%;
+    background-color: #555;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background: #333;
+    color: #ffff;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.contenedor {
+    width: 98%;
+    margin: auto;
+}
+
+h1 {
+    float: left;
+}
+
+header .contenedor {
+    display: table;
+}
+
+section {
+    width: 100%;
+}
+
+@media only screen and (max-device-height: 450px) {
+    body {
+        overflow: hidden;
+    }
+}
