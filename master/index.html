@@ -3,39 +3,54 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Origami Dojo</title>
-        <link rel="shortcut icon" href="./resources/images/peach.png" type="image/png"/>
+        <title>Origami Slash</title>
+        <link rel="shortcut icon" href="./resources/images/web/OrigamiSlashWeb.png" type="image/png"/>
         
         <script src="phaser.min.js"></script>
         
         
         <link href="css/game.css" rel="stylesheet">
-        <link href="css/menu.css" rel="stylesheet">
         <link href="css/fontello.css" rel="stylesheet" >
-        <link href="css/canvas.css" type="text/css" rel="stylesheet" media="">
     </head>
     
     <body>
         <header>
             <div class="container">
-                <h1 class="icon-gamepad"> ORIGAMI DOJO</h1>
+                <h1 class="icon-gamepad"> ORIGAMI SLASH</h1>
                 <input type="checkbox" id="menu-bar">
                 <label class="icon-menu" for="menu-bar"></label>
                 <nav class = "menu">
-                    <a href="">Menu</a>
-                    <a href="">Mascotas</a>
-                    <a href="">Blog</a>
-                    <a href="">Contacto</a>
+                    <a href="">Juego</a>
+                    <a href="">Referencias</a>
+                    <a href="">Presentacion</a>
+                    <a href="">Sobre nosotros</a>
                 </nav>
             </div>
         </header>
         
-        <div id="vertical"></div>
-        <div id="horizontal">
-            <canvas id="juego" width="1000px" height="500px"> </canvas>
-            <!--<button id="boton-ampliar" onclick="ampliar()">Ampliar canvas</button>-->
-        </div>
-        
+        <main>
+            <section class="pantalla">
+                <div id="vertical"></div>
+                <div id="horizontal">
+                    <canvas id="juego" width="1000px" height="500px"></canvas>
+                    <!--<button id="boton-ampliar" onclick="ampliar()">Ampliar canvas</button>-->
+                </div>
+            </section>
+
+            <section class="presentacion">
+                <div id="container">
+                    <article>
+                        <img src="./resources/images/web/FondoPresentacionS.png">
+                    </article>
+                    <article>
+                        <img src="./resources/images/web/FruitNinja.jpg">
+                    </article>
+                    <article>
+                        <img src="./resources/images/web/FruitNinja2.jpg">
+                    </article>
+                </div>
+            </section>
+        </main>
         <script src="code/canvas.js"></script>
     </body>
 </html>

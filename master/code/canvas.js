@@ -1,4 +1,4 @@
-var canvas_horizontal = document.querySelector("#horizontal");
+/*var canvas_horizontal = document.querySelector("#horizontal");
 var ampliar_lienzo = document.querySelector("#juego");
 
 function ampliar() {
@@ -11,4 +11,4 @@ function ampliar() {
     ampliar_lienzo.style.height = "100vh";
     ampliar_lienzo.style.backgroundSize = "cover";
     ampliar_lienzo.style.backgroundRepeat = "no-repeat";
-}
+}*/
