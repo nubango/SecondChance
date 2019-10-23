@@ -10,11 +10,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
 }
 
 body {
     font-family: adventpro, cursive;
-    /*overflow: hidden;*/
     font-size: 130%;
 }
 
@@ -30,7 +31,7 @@ header {
     z-index: 10;
 }
 
-.container {
+.contenedor {
     width: 98%;
     margin: auto;
 }
@@ -39,17 +40,16 @@ h1 {
     float: left;
 }
 
-header .container {
+header .contenedor {
     display: table;
 }
 
 section {
     width: 100%;
-    margin-bottom: 25px;
 }
 
-@media all and (orientation: portrait) {
+@media only screen and (max-device-height: 450px) {
     body {
-        /*overflow: hidden;*/
+        overflow: hidden;
     }
 }

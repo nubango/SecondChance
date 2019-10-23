@@ -1,17 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-}
-
 #pantalla {
     margin-top: 50px;
     position: relative;
 }
 #horizontal {
     position: relative;
-    margin: 10vh auto;
+    margin: 0vh auto;
     width: 1000px;
     height: 500px;
     background: red;
@@ -39,7 +32,6 @@
 @media all and (orientation: portrait) {
     #horizontal {
         margin-top: 50px;
-        overflow: hidden;
     }
     
     #vertical {
@@ -52,5 +44,11 @@
         opacity: 0.8;
         background-size: cover;
         background-position: center;
+    }
+}
+
+@media all and (orientation: landscape) {
+       #horizontal {
+        margin-top: 50px;
     }
 }
