@@ -1,15 +1,9 @@
-//import Boot from "./boot"
-
 const config = {
     width: 1000,
     height: 500,
     parent: "horizontal",
     type: Phaser.AUTO,
-    scene: {
-        preload: preload,
-        create: create,
-        update: update
-    },
+    scene: [Boot, End],
     physics: {
         default: "arcade",
         arcade: {
@@ -26,11 +20,7 @@ const config = {
 
 var game = new Phaser.Game(config)
 
-function preload() {
-    this.load.image("banana", "./resources/images/banana.png");
-}
-
-function create() {
+/* function create() {
     this.platano = this.physics.add.image(250, 175, "banana");
     this.platano.setScale(0.25);
     this.platano.flipX = false;
@@ -40,7 +30,4 @@ function create() {
     this.platano.setBounce(1);
     this.platano.setAcceleration(50, 0);
 
-}
-
-function update(time, delta) {
-}
+} */
