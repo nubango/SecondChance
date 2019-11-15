@@ -6,7 +6,6 @@
         <title>Origami Slash</title>
         <link rel="shortcut icon" href="./resources/images/web/OrigamiSlashWeb.png" type="image/png"/>
         
-        <script src="phaser.min.js"></script>
         <link href="css/game.css" rel="stylesheet">
         <link href="css/fontello.css" rel="stylesheet" >
     </head>
@@ -29,10 +28,9 @@
         <main>
             <section class="pantalla">
                 <div id="vertical"></div>
-                <div id="horizontal">
-                    <canvas id="juego" width="1000px" height="500px"></canvas>
-                    <!--<button id="boton-ampliar" onclick="ampliar()">Ampliar canvas</button>-->
-                </div>
+                <div id="horizontal"></div>
+                <script src="./node_modules/phaser/dist/phaser.js"></script>
+                <script src="./code/config.js"></script>
             </section>
 
             <section id="presentacion">
@@ -43,9 +41,6 @@
                     <article>
                         <img class="image" src="./resources/images/web/FruitNinja.jpg">
                     </article>
-                    <!--<article>
-                        <img class="image" src="./resources/images/web/FruitNinja3.jpg">
-                    </article>-->
                     <article>
                         <img class="image" src="./resources/images/web/DiagramasPresentacion.png">
                     </article>
@@ -60,6 +55,5 @@
                 <a class="icon-github-circled-alt2" href="https://github.com/nubango/SecondChance"></a>
             </div>
         </footer>
-        <script src="code/canvas.js"></script>
     </body>
 </html>

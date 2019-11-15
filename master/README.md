@@ -1,7 +1,3 @@
-# Plantilla para juegos en Phaser
+# Juego de PVLI - Second Chance 19 20
 
-Plantilla básica para juegos en Phaser. Hace falta un servidor web para que se ejecute. Por ejemplo:
-
-```bash
-npx http-server
-```
+Origami Slash.
