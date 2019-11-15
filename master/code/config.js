@@ -1,3 +1,6 @@
+import Boot from "./boot.js";
+import End from "./end.js";
+
 const config = {
     width: 1000,
     height: 500,

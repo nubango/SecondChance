@@ -1,4 +1,4 @@
-class Boot extends Phaser.Scene {
+export default class Boot extends Phaser.Scene {
   constructor() {
     super({ key: 'BOOT' });
   }
@@ -24,6 +24,15 @@ class Boot extends Phaser.Scene {
     graphics.fillRect(100, 200, 600, 200);
     graphics.fillRect(100, 100, 100, 100);
     this.add.text(120, 110, "A", { font: "96px Courier", fill: "#000000" });
+  
+    this.platano = this.physics.add.image(250, 175, "platano");
+    this.platano.setScale(0.25);
+    this.platano.flipX = false;
+    this.platano.setOrigin(0.5, 0.5);
+    this.platano.setOrigin(0.5);
+    this.platano.setCollideWorldBounds(true);
+    this.platano.setBounce(1);
+    this.platano.setAcceleration(100, 0);
   }
 
   update(time, delta) { }

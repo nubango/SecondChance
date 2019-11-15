@@ -1,4 +1,4 @@
-class End extends Phaser.Scene {
+export default class End extends Phaser.Scene {
   constructor() {
     super({ key: 'END', active: true });
   }
