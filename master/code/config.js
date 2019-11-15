@@ -1,12 +1,14 @@
-import Boot from "./boot.js";
-import End from "./end.js";
+import Boot from "./scenes/boot.js";
+import Menu from "./scenes/menu.js";
+import Arcades from "./scenes/arcades.js";
+import End from "./scenes/end.js";
 
 const config = {
     width: 1000,
     height: 500,
     parent: "horizontal",
     type: Phaser.AUTO,
-    scene: [Boot, End],
+    scene: [Boot, Menu, Arcades, End],
     physics: {
         default: "arcade",
         arcade: {
@@ -20,17 +22,4 @@ const config = {
     }
 }
 
-
-var game = new Phaser.Game(config)
-
-/* function create() {
-    this.platano = this.physics.add.image(250, 175, "banana");
-    this.platano.setScale(0.25);
-    this.platano.flipX = false;
-    this.platano.setOrigin(0.5, 0.5);
-    this.platano.setOrigin(0.5);
-    this.platano.setCollideWorldBounds(true);
-    this.platano.setBounce(1);
-    this.platano.setAcceleration(50, 0);
-
-} */
+var game = new Phaser.Game(config);
