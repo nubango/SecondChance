@@ -6,9 +6,10 @@
         <title>Origami Slash</title>
         <link rel="shortcut icon" href="./resources/images/web/OrigamiSlashWeb.png" type="image/png"/>
         
-        <script src="phaser.min.js"></script>
         <link href="css/game.css" rel="stylesheet">
         <link href="css/fontello.css" rel="stylesheet" >
+        <script src="./phaser.min.js"></script>
+        <script src="./code/config.js" type="module"></script>
     </head>
     
     <body>
@@ -29,25 +30,19 @@
         <main>
             <section class="pantalla">
                 <div id="vertical"></div>
-                <div id="horizontal">
-                    <canvas id="juego" width="1000px" height="500px"></canvas>
-                    <!--<button id="boton-ampliar" onclick="ampliar()">Ampliar canvas</button>-->
-                </div>
+                <div id="horizontal"></div>
             </section>
 
             <section id="presentacion">
                 <div class="contenedor">
                     <article>
-                        <img class="image" src="./resources/images/web/FondoPresentacionS.png">
+                        <img class="image" src="./resources/images/web/fruitNinjaCaptureA.jpg">
                     </article>
                     <article>
-                        <img class="image" src="./resources/images/web/FruitNinja.jpg">
+                        <img class="image" src="./resources/images/web/diapoLogoA.png">
                     </article>
-                    <!--<article>
-                        <img class="image" src="./resources/images/web/FruitNinja3.jpg">
-                    </article>-->
                     <article>
-                        <img class="image" src="./resources/images/web/DiagramasPresentacion.png">
+                        <img class="image" src="./resources/images/web/arquitectura.png">
                     </article>
                 </div>
             </section>
@@ -60,6 +55,5 @@
                 <a class="icon-github-circled-alt2" href="https://github.com/nubango/SecondChance"></a>
             </div>
         </footer>
-        <script src="code/canvas.js"></script>
     </body>
 </html>
