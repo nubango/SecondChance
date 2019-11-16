@@ -11,13 +11,6 @@
     background: red;
 }
 
-/*#horizontal button {
-    display: block; position: relative;
-    margin: 5px 0; padding: 10px;
-    cursor: pointer;
-}*/
-
-/*#juego*/
 #horizontal canvas {
     position: absolute;
     top: 50%;
