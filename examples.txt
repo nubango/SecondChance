@@ -1,0 +1,4 @@
+https://phaser.io/examples/v3/view/game-objects/particle-emitter/mouse-trail
+https://phaser.io/examples/v3/view/input/mouse/click-sprite
+https://phaser.io/examples/v3/view/actions/shift-position
+https://snowbillr.github.io/blog/2018-07-03-buttons-in-phaser-3/
