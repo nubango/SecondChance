@@ -1,6 +1,7 @@
 import Boot from "./scenes/boot.js";
 import Menu from "./scenes/menu.js";
 import Arcades from "./scenes/arcades.js";
+import Zen from "./scenes/zen.js";
 import End from "./scenes/end.js";
 
 const config = {
@@ -8,7 +9,7 @@ const config = {
     height: 500,
     parent: "horizontal",
     type: Phaser.AUTO,
-    scene: [Boot, Menu, Arcades, End],
+    scene: [Boot, Menu, Arcades, Zen, End],
     physics: {
         default: "arcade",
         arcade: {
