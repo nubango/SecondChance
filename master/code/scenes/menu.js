@@ -65,6 +65,8 @@ export default class Menu extends Phaser.Scene {
         }
     }
 
+ 
+
     startArcade() {
         // Empieza la ecena arcade
         this.scene.start("ARCADES");

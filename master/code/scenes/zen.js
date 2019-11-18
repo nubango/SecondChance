@@ -1,8 +1,6 @@
 import Fruit from "../objects/fruit.js"
 
 var colour = 60;
-var timerText;
-var timedEvent;
 
 export default class Zen extends Phaser.Scene {
     constructor() {
@@ -33,9 +31,9 @@ export default class Zen extends Phaser.Scene {
             }
         }, this);
 
-        // 
-        timerText = this.add.text(width * 0.5, heigth * 0.1, "", { font: "72px adventpro", fill: "#222222" });
-        //timedEvent = this.time.addEvent({ delay: 500, callback: goMenu, callbackScope: this, loop: false });
+        // Timer
+        this.timerText = this.add.text(width * 0.5, heigth * 0.1, "", { font: "72px adventpro", fill: "#222222" });
+        this.tim = this.time.delayedCall(10000, () => goMenu(this), [], this);
     }
 
     update(time, delta) {
@@ -45,10 +43,10 @@ export default class Zen extends Phaser.Scene {
             colour = 60;
         }
         // Actualiza el timer
-        //timerText.setText(timedEvent.getProgress().toString());
+        this.timerText.setText("Time: " + this.tim.getElapsedSeconds().toString().substr(0, 4));
     }
+}
 
-    goMenu() {
-        this.scene.start("MENU");
-    }
+function goMenu(zen) {
+    zen.scene.start("MENU");
 }
