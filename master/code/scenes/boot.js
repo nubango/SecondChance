@@ -16,11 +16,17 @@ export default class Boot extends Phaser.Scene {
     this.load.image("platanoA", "./resources/images/fruits/bananaA.png");
     this.load.image("platanoB", "./resources/images/fruits/bananaB.png");
     this.load.image("moraA", "./resources/images/fruits/black-berry-dark.png");
+    this.load.image("moraAA", "./resources/images/fruits/black-berry-darkA.png");
+    this.load.image("moraAB", "./resources/images/fruits/black-berry-darkB.png");
     this.load.image("moraB", "./resources/images/fruits/black-berry-light.png");
     this.load.image("moraBA", "./resources/images/fruits/black-berry-lightA.png");
     this.load.image("moraBB", "./resources/images/fruits/black-berry-lightB.png");
     this.load.image("cerezaB", "./resources/images/fruits/black-cherry.png");
+    this.load.image("cerezaBA", "./resources/images/fruits/black-cherryA.png");
+    this.load.image("cerezaBB", "./resources/images/fruits/black-cherryB.png");
     this.load.image("coco", "./resources/images/fruits/coconut.png");
+    this.load.image("cocoA", "./resources/images/fruits/coconut.png");
+    this.load.image("cocoB", "./resources/images/fruits/coconut.png");
     this.load.image("manzanaA", "./resources/images/fruits/green-apple.png");
     this.load.image("uvaA", "./resources/images/fruits/green-grape.png");
     this.load.image("limon", "./resources/images/fruits/lemon.png");
@@ -36,5 +42,7 @@ export default class Boot extends Phaser.Scene {
     this.load.image("frutaRara", "./resources/images/fruits/star-fruit.png");
     this.load.image("fresa", "./resources/images/fruits/strawberry.png");
     this.load.image("sandia", "./resources/images/fruits/watermelon.png");
+    // Tinta
+    this.load.image("tinta", "./resources/images/punto-azulB.png");
   }
 }
