@@ -1,4 +1,4 @@
-import Fruit from "../objects/fruit.js"
+import MenuFruit from "../objects/menuFruit.js"
 
 var colour = 60;
 
