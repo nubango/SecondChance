@@ -25,8 +25,8 @@ export default class MenuFruit extends Phaser.GameObjects.Sprite {
 
     corte() {
         if (this.cutedFruitA == null && this.cutedFruitA == null) {
-            this.cutedFruitA = new CuttedFruit(this.scene, this.x, this.y, "ciruela", -100);
-            this.cutedFruitB = new CuttedFruit(this.scene, this.x, this.y, "ciruela", 100);
+            this.cutedFruitA = new CuttedFruit(this.scene, this.x, this.y, "moraBA", -100);
+            this.cutedFruitB = new CuttedFruit(this.scene, this.x, this.y, "moraBB", 100);
             this.muerte();
         }
     }

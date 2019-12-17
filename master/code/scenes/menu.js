@@ -40,6 +40,7 @@ export default class Menu extends Phaser.Scene {
         
         // Frutas saltando
         this.platano = new MenuFruit(this, width * 0.1, heigth * 0.3, "platano", 100);
+        
 
         // Boton de arcade
         const arcadeButton = this.add.text(width * 0.2, heigth * 0.7, "Arcade", { font: "96px adventpro", fill: "#222222" });
