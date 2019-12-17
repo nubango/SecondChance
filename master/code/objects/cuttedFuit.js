@@ -13,7 +13,7 @@ export default class CuttedFruit extends Phaser.GameObjects.Sprite {
     }
     
     update(time, delta) {
-        if (this.y > this.scene.sys.game.config.height - 500) {
+        if (this.y > this.scene.sys.game.config.height) {
             this.muerte()
         }
     }

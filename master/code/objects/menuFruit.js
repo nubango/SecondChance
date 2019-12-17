@@ -12,9 +12,11 @@ export default class MenuFruit extends Phaser.GameObjects.Sprite {
         this.body.setBounce(1);
         this.body.setAcceleration(vel, 0);
 
+        
         this.flipX = false;
         this.setScale(0.2);
         this.setOrigin(0.5);
+        this.setInteractive();
     }
 
     muerte() {

@@ -32,7 +32,5 @@ export default class Boot extends Phaser.Scene {
     this.load.image("frutaRara", "./resources/images/fruits/star-fruit.png");
     this.load.image("fresa", "./resources/images/fruits/strawberry.png");
     this.load.image("sandia", "./resources/images/fruits/watermelon.png");
-    // Tinta
-    this.load.image("tinta", "./resources/images/punto-azulB.png");
   }
 }
