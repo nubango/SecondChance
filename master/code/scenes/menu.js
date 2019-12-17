@@ -1,5 +1,4 @@
 import MenuFruit from "../objects/menuFruit.js"
-import Fruit from "../objects/fruit.js"
 
 // Variables globales
 var colour = 60;
@@ -41,10 +40,7 @@ export default class Menu extends Phaser.Scene {
         // Frutas saltando
         this.platano = new MenuFruit(this, width * 0.1, heigth * 0.3, "platano", 100);
         this.platano.setInteractive();
-        this.ciruela = new MenuFruit(this, center_width, center_heigth, "ciruela", -100);
-        this.platano.setInteractive();
-        //this.ciruela2 = new Fruit(this, center_width, center_heigth, "ciruela", -100);
-        
+
         // Boton de arcade
         const arcadeButton = this.add.text(width * 0.2, heigth * 0.7, "Arcade", { font: "96px adventpro", fill: "#222222" });
         arcadeButton.setInteractive();
@@ -63,7 +59,7 @@ export default class Menu extends Phaser.Scene {
     
     update(time, delta) {
         var pointer = this.input.activePointer;
-
+        
         // Cambia de color
         colour++;
         if (colour === 180) {

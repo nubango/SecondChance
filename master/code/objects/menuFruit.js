@@ -1,3 +1,5 @@
+import CuttedFruit from "./cuttedFuit.js"
+
 export default class MenuFruit extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, type, vel) {
         super(scene, x, y, type);
@@ -15,7 +17,15 @@ export default class MenuFruit extends Phaser.GameObjects.Sprite {
         this.setOrigin(0.5);
     }
 
-    corte() {
+    muerte() {
         this.destroy();
+    }
+
+    corte() {
+        if (this.cutedFruitA == null && this.cutedFruitA == null) {
+            this.cutedFruitA = new CuttedFruit(this.scene, this.x, this.y, "ciruela", -100);
+            this.cutedFruitB = new CuttedFruit(this.scene, this.x, this.y, "ciruela", 100);
+            this.muerte();
+        }
     }
 }

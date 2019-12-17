@@ -1,4 +1,4 @@
-export default class Fruit extends Phaser.GameObjects.Sprite {
+export default class CuttedFruit extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, type, vel) {
         super(scene, x, y, type);
         // Fisicas
@@ -6,18 +6,19 @@ export default class Fruit extends Phaser.GameObjects.Sprite {
         scene.physics.world.enable(this);
         scene.physics.add.existing(this);
         // Propiedades
-        this.body.setAcceleration(vel, 0);
+        this.body.setAcceleration(vel, -45);
 
-        this.flipX = false;
         this.setScale(0.2);
         this.setOrigin(0.5);
     }
     
-    muerte() {
-        this.destroy();
+    update(time, delta) {
+        if (this.y > this.scene.sys.game.config.height - 500) {
+            this.muerte()
+        }
     }
 
-    corte() {
+    muerte() {
         this.destroy();
     }
 }
