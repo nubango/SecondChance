@@ -40,7 +40,8 @@ export default class Menu extends Phaser.Scene {
         
         // Frutas saltando
         this.platano = new MenuFruit(this, width * 0.1, heigth * 0.3, "platano", 100);
-        
+        this.mora = new MenuFruit(this, width * 0.6, heigth * 0.3, "moraA", -100);
+
 
         // Boton de arcade
         const arcadeButton = this.add.text(width * 0.2, heigth * 0.7, "Arcade", { font: "96px adventpro", fill: "#222222" });
@@ -59,7 +60,6 @@ export default class Menu extends Phaser.Scene {
     }
     
     update(time, delta) {
-        //sceneUpdate(time, delta);
         var pointer = this.input.activePointer;
         
         // Cambia de color
@@ -70,6 +70,7 @@ export default class Menu extends Phaser.Scene {
 
         if (pointer.isDown) {
             this.platano.on('pointerover', () => this.platano.corte());
+            this.mora.on('pointerover', () => this.mora.corte());
         }
     }
 

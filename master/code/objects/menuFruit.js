@@ -3,6 +3,8 @@ import CuttedFruit from "./cuttedFuit.js"
 export default class MenuFruit extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, type, vel) {
         super(scene, x, y, type);
+
+        this.name = type;
         // Fisicas
         scene.add.existing(this);
         scene.physics.world.enable(this);
@@ -25,8 +27,8 @@ export default class MenuFruit extends Phaser.GameObjects.Sprite {
 
     corte() {
         if (this.cutedFruitA == null && this.cutedFruitA == null) {
-            this.cutedFruitA = new CuttedFruit(this.scene, this.x, this.y, "moraBA", -100);
-            this.cutedFruitB = new CuttedFruit(this.scene, this.x, this.y, "moraBB", 100);
+            this.cutedFruitA = new CuttedFruit(this.scene, this.x, this.y, this.name + "A", -100);
+            this.cutedFruitB = new CuttedFruit(this.scene, this.x, this.y, this.name + "B", 100);
             this.muerte();
         }
     }
