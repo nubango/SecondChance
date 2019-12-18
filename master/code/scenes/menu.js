@@ -4,6 +4,13 @@ import MenuButton from "../objects/menuButton.js"
 // Variables globales
 var colour = 60;
 
+var scoreArcade = 543;
+var arcadeScoreText;
+var scoreZen = 432;
+var zenScoreText;
+
+var keySpace;
+
 export default class Menu extends Phaser.Scene {
     constructor() {
         super({ key: "MENU" });
@@ -26,13 +33,20 @@ export default class Menu extends Phaser.Scene {
         this.arcadeButton = new MenuButton(this, width * 0.2, heigth * 0.7, "arcade_button");
         this.zenButton = new MenuButton(this, width * 0.8, heigth * 0.7, "zen_button");
         
-        var creditsButton = new MenuButton(this, width * 0.05, heigth * 0.1, "info_button");
-        creditsButton.setScale(0.02);
+        var creditsButton = new MenuButton(this, width -30 , heigth -30, "info_button");
+        creditsButton.setScale(0.015);
         creditsButton.on('pointerdown', () => this.startCredits());
         
         // Logo
         var logo = this.add.image(center_width, center_heigth * 0.7, "logo");
         logo.setScale(0.4, 0.4);
+
+        // Scores
+        arcadeScoreText = this.add.text(25, 16, '0000', { fontFamily: "adventpro", fontStyle: 'bold' ,fontSize: '50px', fill: '#000' });
+        zenScoreText = this.add.text(width - 150, 16, '0000', { fontFamily: "adventpro", fontStyle: 'bold' ,fontSize: '50px', fill: '#000' });
+        
+        // Input
+        keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         
         // Tinta
         var renderTex = this.add.renderTexture(0, 0, width, heigth);
@@ -68,7 +82,14 @@ export default class Menu extends Phaser.Scene {
             this.arcadeButton.on('pointerover', () => this.arcadeButton.corte("ARCADES"));
             this.zenButton.on('pointerover', () => this.zenButton.corte("ZEN"));
         }
-    }
+
+        // DEBUG
+        if(keySpace.isDown)
+        {
+            arcadeScoreText.setText(scoreArcade);
+            scoreArcade += 1;  
+        }  
+        }
 
     // Salto a escenas
     startArcade() {
