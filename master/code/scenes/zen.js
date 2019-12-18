@@ -1,6 +1,7 @@
 import Fruit from "../objects/fruit.js"
 
 var colour = 60;
+var score = 0;
 // Create array of fruits
 var fruits = ["platano", "mora", "cerezaB", "coco", "manzanaA", "uvaA",
     "limon", "lima", "naranja", "malocoton", "pera", "ciruela", "frambuesa",
@@ -36,8 +37,11 @@ export default class Zen extends Phaser.Scene {
         }, this);
         
         // Timer
-        this.timerText = this.add.text(width * 0.5, height * 0.1, "", { font: "72px adventpro", fill: "#222222" });
-        this.tim = this.time.delayedCall(100000, () => goMenu(this), [], this);
+        this.timerText = this.add.text(width * 0.6, height * 0.1, "", { font: "72px adventpro", fill: "#222222" });
+        this.tim = this.time.delayedCall(10000, () => goMenu(this), [], this);
+        // Points
+        this.pointsText = this.add.text(width * 0.1, height * 0.1, "", { font: "72px adventpro", fill: "#222222" });
+
         
         // Declarar fruit
         this.fruit = [];
@@ -70,19 +74,33 @@ export default class Zen extends Phaser.Scene {
                 if (posX < pointer.x && posX + wid > pointer.x && posY < pointer.y && posY + hei > pointer.y) {
                     this.fruit[i].corte();
                     this.fruit.splice(i, 1);
+                    // Actualiza los puntoss
+                    score += 2;
                 }
             }
 
             if (this.fruit[i] != null && this.fruit[i].y > 800) {
                 this.fruit.splice(i, 1);
+                // Actualiza los puntos
+                if (score > 0) {
+                score--;
+                }
             }
         }
         
-        // Actualiza el timer
+        // Actualiza el timer y points
         this.timerText.setText("Time: " + this.tim.getElapsedSeconds().toString().substr(0, 4));
+        this.pointsText.setText("Score: " + score);
     }
 }
 
 function goMenu(zen) {
+    if (localStorage.getItem('highscoreZen') === null) {
+        localStorage.setItem('highscoreZen', score);
+    }
+    else if(score > localStorage.getItem('highscoreZen')) {
+        localStorage.setItem('highscoreZen', score);
+    }
+
     zen.scene.start("MENU");
 }
