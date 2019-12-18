@@ -41,13 +41,12 @@ export default class Menu extends Phaser.Scene {
         if (localStorage.getItem('highscoreZen') != null) {
             this.zenScoreText = this.add.text(width * 0.9, height * 0.05, localStorage.getItem('highscoreZen'), { fontFamily: "adventpro", fontStyle: 'bold' ,fontSize: '50px', fill: '#000' });
         }
-
-        // Input
-        var keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         
         // Music
-        this.music = this.sound.add('menu_theme', {loop: true});
-        this.music.play();
+        if (this.music == null) {
+            this.music = this.sound.add('menu_theme', {loop: true});
+            this.music.play();
+        }
 
         // Tinta
         var renderTex = this.add.renderTexture(0, 0, width, height);
@@ -76,6 +75,7 @@ export default class Menu extends Phaser.Scene {
             colour = 60;
         }
 
+        // Interacciones del menu
         if (pointer.isDown) {
             this.platano.on('pointerover', () => this.platano.corte());
             this.mora.on('pointerover', () => this.mora.corte());
@@ -87,12 +87,10 @@ export default class Menu extends Phaser.Scene {
 
     // Salto a escenas
     startArcade() {
-        this.music.stop();
         // Empieza la ecena arcade
         this.scene.start("ARCADES");
     }
     startZen() {
-        this.music.stop();
         // Empieza la ecena zen
         this.scene.start("ZEN");
     }
