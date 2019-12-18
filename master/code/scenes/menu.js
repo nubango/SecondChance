@@ -36,7 +36,7 @@ export default class Menu extends Phaser.Scene {
 
         // Scores
         if (localStorage.getItem('highscoreArcade') != null) {
-            this.arcadeScoreText = this.add.text(width * 0.1, height * 0.05, localStorage.getItem('highscoreArcade'), { fontFamily: "adventpro", fontStyle: 'bold' ,fontSize: '50px', fill: '#000' });
+            this.arcadeScoreText = this.add.text(width * 0.05, height * 0.05, localStorage.getItem('highscoreArcade'), { fontFamily: "adventpro", fontStyle: 'bold' ,fontSize: '50px', fill: '#000' });
         }
         if (localStorage.getItem('highscoreZen') != null) {
             this.zenScoreText = this.add.text(width * 0.9, height * 0.05, localStorage.getItem('highscoreZen'), { fontFamily: "adventpro", fontStyle: 'bold' ,fontSize: '50px', fill: '#000' });
