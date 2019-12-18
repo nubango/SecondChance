@@ -4,10 +4,6 @@ import MenuButton from "../objects/menuButton.js"
 // Variables globales
 var colour = 60;
 
-var keySpace;
-
-var music;
-
 export default class Menu extends Phaser.Scene {
     constructor() {
         super({ key: "MENU" });
@@ -47,7 +43,7 @@ export default class Menu extends Phaser.Scene {
         }
 
         // Input
-        keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+        var keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         
         // Music
         this.music = this.sound.add('menu_theme', {loop: true});
@@ -87,14 +83,7 @@ export default class Menu extends Phaser.Scene {
             this.arcadeButton.on('pointerover', () => this.arcadeButton.corte("ARCADES"));
             this.zenButton.on('pointerover', () => this.zenButton.corte("ZEN"));
         }
-
-        // DEBUG
-        if(keySpace.isDown)
-        {
-            arcadeScoreText.setText(scoreArcade);
-            scoreArcade += 1;  
-        }  
-        }
+    }
 
     // Salto a escenas
     startArcade() {

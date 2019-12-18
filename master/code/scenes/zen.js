@@ -42,7 +42,6 @@ export default class Zen extends Phaser.Scene {
         // Points
         this.pointsText = this.add.text(width * 0.1, height * 0.1, "", { font: "72px adventpro", fill: "#222222" });
 
-        
         // Declarar fruit
         this.fruit = [];
     }
@@ -59,7 +58,7 @@ export default class Zen extends Phaser.Scene {
         var random = Phaser.Math.Between(0, 50);
 
         if (random == 0) {
-            var randomFruit = Phaser.Math.Between(0, 18);
+            var randomFruit = Phaser.Math.Between(0, 17);
             var randomX = Phaser.Math.Between(0, this.sys.game.config.width);
             this.fruit.push(new Fruit(this, randomX, this.sys.game.config.height, fruits[randomFruit]));
         }
@@ -83,7 +82,7 @@ export default class Zen extends Phaser.Scene {
                 this.fruit.splice(i, 1);
                 // Actualiza los puntos
                 if (score > 0) {
-                score--;
+                    score--;
                 }
             }
         }
