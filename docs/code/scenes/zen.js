@@ -1,5 +1,6 @@
 import Fruit from "../objects/fruit.js"
 
+// Variables globales
 var colour = 60;
 var score = 0;
 // Create array of fruits
@@ -38,7 +39,7 @@ export default class Zen extends Phaser.Scene {
         
         // Timer
         this.timerText = this.add.text(width * 0.6, height * 0.1, "", { font: "72px adventpro", fill: "#222222" });
-        this.tim = this.time.delayedCall(10000, () => goMenu(this), [], this);
+        this.tim = this.time.delayedCall(100000, () => goMenu(this), [], this);
         // Points
         this.pointsText = this.add.text(width * 0.1, height * 0.1, "", { font: "72px adventpro", fill: "#222222" });
 
@@ -54,9 +55,9 @@ export default class Zen extends Phaser.Scene {
             colour = 60;
         }
         
-        // Spawner de frutas
+        // Dificultad
         var random = Phaser.Math.Between(0, 50);
-
+        // Spawner de frutas
         if (random == 0) {
             var randomFruit = Phaser.Math.Between(0, 17);
             var randomX = Phaser.Math.Between(0, this.sys.game.config.width);
@@ -94,12 +95,13 @@ export default class Zen extends Phaser.Scene {
 }
 
 function goMenu(zen) {
+    // Guardar la maxima puntuacion
     if (localStorage.getItem('highscoreZen') === null) {
         localStorage.setItem('highscoreZen', score);
     }
     else if(score > localStorage.getItem('highscoreZen')) {
         localStorage.setItem('highscoreZen', score);
     }
-
+    // Volver al menu
     zen.scene.start("MENU");
 }

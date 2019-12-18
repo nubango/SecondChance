@@ -1,11 +1,12 @@
 import Fruit from "../objects/fruit.js"
 
+// Variables globales
 var colour = 60;
+var score = 0;
 // Create array of fruits
 var fruits = ["platano", "mora", "cerezaB", "coco", "manzanaA", "uvaA",
     "limon", "lima", "naranja", "malocoton", "pera", "ciruela", "frambuesa",
     "manzanaB", "cerezaA", "uvaB", "fresa", "sandia"];
-var score = 0;
 
 export default class Arcades extends Phaser.Scene {
     constructor() {
@@ -70,7 +71,7 @@ export default class Arcades extends Phaser.Scene {
 
         // Spawner de frutas
         if (randomF == 0) {
-            var randomX = Phaser.Math.Between(0, this.sys.game.config.width);
+            var randomX = Phaser.Math.Between(50, this.sys.game.config.width - 50);
             var randomFruit = Phaser.Math.Between(0, 17);
             this.fruit.push(new Fruit(this, randomX, this.sys.game.config.height, fruits[randomFruit]));
         }
@@ -79,7 +80,9 @@ export default class Arcades extends Phaser.Scene {
             this.bombs.push(new Fruit(this, randomX, this.sys.game.config.height, "bomba"));
         }
 
+        // Comprobar las colisiones de las frutas
         for (var i = 0; i < this.fruit.length; ++i) {
+            // Con el jugador
             if (pointer.isDown) {
                 var wid = this.fruit[i].width;
                 var hei = this.fruit[i].height;
@@ -94,6 +97,7 @@ export default class Arcades extends Phaser.Scene {
                 }
             }
 
+            // Con la deadzone
             if (this.fruit[i] != null && this.fruit[i].y > this.sys.game.config.height + 100) {
                 this.fruit.splice(i, 1);
                 // Actualiza los puntos
@@ -103,6 +107,7 @@ export default class Arcades extends Phaser.Scene {
             }
         }
 
+        // Comprobar las colisiones de las bombas
         for (var i = 0; i < this.bombs.length; ++i) {
             if (pointer.isDown) {
                 var wid = this.bombs[i].width;
@@ -140,12 +145,13 @@ export default class Arcades extends Phaser.Scene {
 }
 
 function goMenu(arcades) {
+    // Guardar la maxima puntuacion
     if (localStorage.getItem('highscoreArcade') === null) {
         localStorage.setItem('highscoreArcade', score);
     }
     else if(score > localStorage.getItem('highscoreArcade')) {
         localStorage.setItem('highscoreArcade', score);
     }
-
+    // Volver al menu
     arcades.scene.start("MENU");
 }
