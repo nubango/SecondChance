@@ -1,6 +1,10 @@
-import MenuFruit from "../objects/menuFruit.js"
+import Fruit from "../objects/fruit.js"
 
 var colour = 60;
+// Create array of fruits
+var fruits = ["platano", "mora", "cerezaB", "coco", "manzanaA", "uvaA",
+    "limon", "lima", "naranja", "malocoton", "pera", "ciruela", "frambuesa",
+    "manzanaB", "cerezaA", "uvaB", "fresa", "sandia"];
 
 export default class Zen extends Phaser.Scene {
     constructor() {
@@ -11,12 +15,13 @@ export default class Zen extends Phaser.Scene {
         // Centro x, y : Size w, h
         let width = this.sys.game.config.width;
         let heigth = this.sys.game.config.height;
-
+        
+        
         // Background con forma de cuaderno
         var background = this.add.image(0, 0, "background");
         background.setOrigin(0);
         background.setDisplaySize(width, heigth);
-
+        
         // Tinta
         var renderTex = this.add.renderTexture(0, 0, width, heigth);
         var boli = this.textures.getFrame('tinta');
@@ -27,21 +32,49 @@ export default class Zen extends Phaser.Scene {
                 points.forEach(function (p) {
                     renderTex.draw(boli, p.x, p.y, 1, hsv[colour].color);
                 });
-                
             }
         }, this);
-
+        
         // Timer
         this.timerText = this.add.text(width * 0.5, heigth * 0.1, "", { font: "72px adventpro", fill: "#222222" });
-        this.tim = this.time.delayedCall(10000, () => goMenu(this), [], this);
+        this.tim = this.time.delayedCall(100000, () => goMenu(this), [], this);
+        
+        // Declarar fruit
+        this.fruit = [];
     }
-
+        
     update(time, delta) {
+        var pointer = this.input.activePointer;
         // Cambia de color
         colour++;
         if (colour === 180) {
             colour = 60;
         }
+        
+        // Spawner de frutas
+        var random = Phaser.Math.Between(0, 50);
+
+        if (random == 0) {
+            var randomFruit = Phaser.Math.Between(0, 18);
+            var randomX = Phaser.Math.Between(0, this.sys.game.config.width);
+            this.fruit.push(new Fruit(this, randomX, this.sys.game.config.height, fruits[randomFruit]));
+        }
+
+        for (var i = 0; i < this.fruit.length; ++i) {
+            if (pointer.isDown) {
+                this.fruit[i].on('pointerover', () => this.fruit[i].corte());
+            }
+
+            if (this.fruit[i].y < 250) {
+                this.fruit[i].corte();
+                this.fruit.splice(i, 1);
+            }
+
+            if (this.fruit[i] != null && this.fruit[i].y > 800) {
+                this.fruit.splice(i, 1);
+            }
+        }
+        
         // Actualiza el timer
         this.timerText.setText("Time: " + this.tim.getElapsedSeconds().toString().substr(0, 4));
     }

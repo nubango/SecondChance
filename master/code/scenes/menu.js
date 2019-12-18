@@ -16,11 +16,19 @@ export default class Menu extends Phaser.Scene {
         let heigth = this.sys.game.config.height;
         let center_width = this.sys.game.config.width / 2;
         let center_heigth = this.sys.game.config.height / 2;
-
+        
         // Background con forma de cuaderno
         var background = this.add.image(0, 0, "mainMenuBG");
         background.setOrigin(0);
         background.setDisplaySize(width, heigth);
+        
+        // Botones
+        this.arcadeButton = new MenuButton(this, width * 0.2, heigth * 0.7, "arcade_button");
+        this.zenButton = new MenuButton(this, width * 0.8, heigth * 0.7, "zen_button");
+        
+        var creditsButton = new MenuButton(this, width * 0.05, heigth * 0.1, "info_button");
+        creditsButton.setScale(0.02);
+        creditsButton.on('pointerdown', () => this.startCredits());
         
         // Logo
         var logo = this.add.image(center_width, center_heigth * 0.7, "logo");
@@ -41,25 +49,7 @@ export default class Menu extends Phaser.Scene {
         
         // Frutas saltando
         this.platano = new MenuFruit(this, width * 0.1, heigth * 0.3, "platano", 100);
-        this.mora = new MenuFruit(this, width * 0.6, heigth * 0.3, "moraA", -100);
-
-        // Boton de arcade
-        var arcadeButton = this.add.image(width * 0.2, heigth * 0.7, 'arcade_button');
-        arcadeButton.setScale(1, 1);
-        arcadeButton.setInteractive();
-        arcadeButton.on('pointerdown', () => this.startArcade());;
-        
-        // Boton de zen
-        var zenButton = this.add.image(width * 0.8, heigth * 0.7, 'zen_button');
-        zenButton.setScale(1, 1);
-        zenButton.setInteractive();
-        zenButton.on('pointerdown', () => this.startZen());;
-
-        // Boton de creditos
-        var creditsButton = this.add.image(40, 40, 'info_button');
-        creditsButton.setScale(0.02, 0.02);
-        creditsButton.setInteractive();
-        creditsButton.on('pointerdown', () => this.toCredits());
+        this.mora = new MenuFruit(this, width * 0.6, heigth * 0.3, "mora", -100);
     }
     
     update(time, delta) {
@@ -74,8 +64,9 @@ export default class Menu extends Phaser.Scene {
         if (pointer.isDown) {
             this.platano.on('pointerover', () => this.platano.corte());
             this.mora.on('pointerover', () => this.mora.corte());
-            //this.zenButton.on('pointerover', () => this.zenButton.corte());
-            //this.arcadeButton.on('pointerover', () => this.arcadeButton.corte());
+            
+            this.arcadeButton.on('pointerover', () => this.arcadeButton.corte("ARCADES"));
+            this.zenButton.on('pointerover', () => this.zenButton.corte("ZEN"));
         }
     }
 
@@ -88,8 +79,7 @@ export default class Menu extends Phaser.Scene {
         // Empieza la ecena zen
         this.scene.start("ZEN");
     }
-    toCredits()
-    {
+    startCredits() {
         // Cambia a la escena de creditos
         this.scene.start("CREDITS");
     }

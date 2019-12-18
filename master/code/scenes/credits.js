@@ -1,4 +1,4 @@
-import MenuFruit from "../objects/menuFruit.js"
+import MenuButton from "../objects/menuButton.js"
 
 export default class Credits extends Phaser.Scene {
     constructor() {
@@ -18,14 +18,12 @@ export default class Credits extends Phaser.Scene {
         background.setDisplaySize(width, heigth);
 
         // Boton de exit
-        var exitButton = this.add.image(40, 40, 'exit_button');
+        var exitButton = new MenuButton(this, width * 0.05, heigth * 0.1, "exit_button");
         exitButton.setScale(0.05, 0.05);
-        exitButton.setInteractive();
-        exitButton.on('pointerdown', () => this.toMenu());
+        exitButton.on('pointerdown', () => this.startMenu());
     }
 
-    toMenu()
-    {
+    startMenu() {
         // Veulve al menu principal
         this.scene.start("MENU");
     }
