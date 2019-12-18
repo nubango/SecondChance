@@ -42,7 +42,6 @@ export default class Menu extends Phaser.Scene {
         this.platano = new MenuFruit(this, width * 0.1, heigth * 0.3, "platano", 100);
         this.mora = new MenuFruit(this, width * 0.6, heigth * 0.3, "moraA", -100);
 
-
         // Boton de arcade
         var arcadeButton = this.add.image(width * 0.2, heigth * 0.7, 'arcade_button');
         arcadeButton.setScale(1, 1);
@@ -60,7 +59,6 @@ export default class Menu extends Phaser.Scene {
         creditsButton.setScale(0.02, 0.02);
         creditsButton.setInteractive();
         creditsButton.on('pointerdown', () => this.toCredits());
-
     }
     
     update(time, delta) {
