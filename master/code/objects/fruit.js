@@ -13,7 +13,7 @@ export default class Fruit extends Phaser.GameObjects.Sprite {
         this.body.setVelocityY(randomY);
         var randomX = Phaser.Math.Between(-200, 200);
         this.body.setVelocityX(randomX);
-
+        // Ajustes
         this.flipX = false;
         this.setScale(1);
         this.setOrigin(0.5);
@@ -21,16 +21,19 @@ export default class Fruit extends Phaser.GameObjects.Sprite {
     
     
     preUpdate(time, delta) {
+        // Cuando se pase de la deadzone hay que eliminarlo
         if (this.y > this.scene.sys.game.config.height + 300) {
             this.muerte()
         }
     }
     
     muerte() {
+        // Caput
         this.destroy();
     }
 
     corte() {
+        // Dividirlo en dos partes iguales no interactivas
         if (this.cutedFruitA == null && this.cutedFruitB == null) {
             this.cutedFruitA = new CuttedFruit(this.scene, this.x, this.y, this.name + "A", -100);
             this.cutedFruitB = new CuttedFruit(this.scene, this.x, this.y, this.name + "B", 100);
