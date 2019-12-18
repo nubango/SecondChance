@@ -34,8 +34,8 @@ export default class Boot extends Phaser.Scene {
     this.load.image("cerezaBA", "./resources/images/fruits/black-cherryA.png");
     this.load.image("cerezaBB", "./resources/images/fruits/black-cherryB.png");
     this.load.image("coco", "./resources/images/fruits/coconut.png");
-    this.load.image("cocoA", "./resources/images/fruits/coconut.png");
-    this.load.image("cocoB", "./resources/images/fruits/coconut.png");
+    this.load.image("cocoA", "./resources/images/fruits/coconutA.png");
+    this.load.image("cocoB", "./resources/images/fruits/coconutB.png");
     this.load.image("manzanaA", "./resources/images/fruits/green-apple.png");
     this.load.image("manzanaAA", "./resources/images/fruits/green-appleA.png");
     this.load.image("manzanaAB", "./resources/images/fruits/green-appleB.png");
@@ -64,8 +64,8 @@ export default class Boot extends Phaser.Scene {
     this.load.image("frambuesaA", "./resources/images/fruits/raspberryA.png");
     this.load.image("frambuesaB", "./resources/images/fruits/raspberryB.png");
     this.load.image("manzanaB", "./resources/images/fruits/red-apple.png");
-    this.load.image("manzanaBA", "./resources/images/fruits/red-apple.png");
-    this.load.image("manzanaBB", "./resources/images/fruits/red-apple.png");
+    this.load.image("manzanaBA", "./resources/images/fruits/red-appleA.png");
+    this.load.image("manzanaBB", "./resources/images/fruits/red-appleB.png");
     this.load.image("cerezaA", "./resources/images/fruits/red-cherry.png");
     this.load.image("cerezaAA", "./resources/images/fruits/red-cherryA.png");
     this.load.image("cerezaAB", "./resources/images/fruits/red-cherryB.png");
@@ -78,7 +78,20 @@ export default class Boot extends Phaser.Scene {
     this.load.image("sandia", "./resources/images/fruits/watermelon.png");
     this.load.image("sandiaA", "./resources/images/fruits/watermelonA.png");
     this.load.image("sandiaB", "./resources/images/fruits/watermelonB.png");
+    // Bomba
+    this.load.image("bomba", "./resources/images/fruits/bomb.png");
+    this.load.image("bombaA", "./resources/images/fruits/bombA.png");
+    this.load.image("bombaB", "./resources/images/fruits/bombB.png");
     // Tinta
     this.load.image("tinta", "./resources/images/punto-azulB.png");
+
+    // Musica
+    this.load.audio('menu_theme',"./resources/music/main_menu_music.wav");
+    this.load.audio('arcade_theme',"./resources/music/arcade_music.wav");
+    this.load.audio('zen_theme',"./resources/music/zen_music.wav");
+    // FX
+    this.load.audio('cutFX',"./resources/sounds/cut.wav");
+    this.load.audio('bombFX',"./resources/sounds/bomb_explosion.mp3");
+    this.load.audio('jumpFX',"./resources/sounds/jump.mp3");
   }
 }
