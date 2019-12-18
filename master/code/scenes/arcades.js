@@ -44,6 +44,7 @@ export default class Arcades extends Phaser.Scene {
         this.livesText = this.add.text(width * 0.4, height * 0.15, " x x x", { font: "72px adventpro", fill: "#222222" });
         // Frutas
         this.fruit = [];
+        this.bombs = [];
     }
 
     update(time, delta) {
@@ -56,12 +57,17 @@ export default class Arcades extends Phaser.Scene {
         }
 
         // Spawner de frutas
-        var random = Phaser.Math.Between(0, 30);
+        var randomF = Phaser.Math.Between(0, 50);
+        var randomB = Phaser.Math.Between(0, 100);
 
-        if (random == 0) {
-            var randomFruit = Phaser.Math.Between(0, 17);
+        if (randomF == 0) {
             var randomX = Phaser.Math.Between(0, this.sys.game.config.width);
+            var randomFruit = Phaser.Math.Between(0, 17);
             this.fruit.push(new Fruit(this, randomX, this.sys.game.config.height, fruits[randomFruit]));
+        }
+        if (randomB == 0) {
+            var randomX = Phaser.Math.Between(0, this.sys.game.config.width);
+            this.fruit.push(new Fruit(this, randomX, this.sys.game.config.height, "bomba"));
         }
 
         for (var i = 0; i < this.fruit.length; ++i) {
@@ -84,24 +90,43 @@ export default class Arcades extends Phaser.Scene {
                 // Actualiza los puntos
                 if (this.vidas > -1) {
                     this.vidas--;
-                    if (this.vidas == 2) {
-                        this.livesText = this.add.text(this.sys.game.config.width * 0.4, this.sys.game.config.height * 0.15, " x ", { font: "74px adventpro", fill: "#DC143C" });
-                    }
-                    else if (this.vidas == 1) {
-                        this.livesText = this.add.text(this.sys.game.config.width * 0.4, this.sys.game.config.height * 0.15, " x x", { font: "74px adventpro", fill: "#DC143C" });
-                    }
-                    else if (this.vidas == 0) {
-                        this.livesText = this.add.text(this.sys.game.config.width * 0.4, this.sys.game.config.height * 0.15, " x x x", { font: "74px adventpro", fill: "#DC143C" });
-                    }
-                }
-                else {
-                    goMenu(this);
                 }
             }
         }
 
-        // Actualiza el  points
+        for (var i = 0; i < this.bombs.length; ++i) {
+            if (pointer.isDown) {
+                var wid = this.bombs[i].width;
+                var hei = this.bombs[i].height;
+                var posX = this.bombs[i].x - wid / 2;
+                var posY = this.bombs[i].y - hei / 2;
+
+                if (posX < pointer.x && posX + wid > pointer.x && posY < pointer.y && posY + hei > pointer.y) {
+                    this.bombs[i].corte();
+                    this.bombs.splice(i, 1);
+                    // Actualiza los puntoss
+                    this.vidas--;
+                }
+            }
+        }
+
+        // Actualiza el texto de vidas
+        if (this.vidas == 2) {
+            this.livesText = this.add.text(this.sys.game.config.width * 0.4, this.sys.game.config.height * 0.15, " x ", { font: "74px adventpro", fill: "#DC143C" });
+        }
+        else if (this.vidas == 1) {
+            this.livesText = this.add.text(this.sys.game.config.width * 0.4, this.sys.game.config.height * 0.15, " x x", { font: "74px adventpro", fill: "#DC143C" });
+        }
+        else if (this.vidas == 0) {
+            this.livesText = this.add.text(this.sys.game.config.width * 0.4, this.sys.game.config.height * 0.15, " x x x", { font: "74px adventpro", fill: "#DC143C" });
+        }
+        // Actualiza el texto de puntos
         this.pointsText.setText("Score: " + score);
+
+        
+        if (this.vidas <= -1) {
+            goMenu(this);
+        }
     }
 }
 
