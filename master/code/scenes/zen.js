@@ -14,16 +14,16 @@ export default class Zen extends Phaser.Scene {
     create() {
         // Centro x, y : Size w, h
         let width = this.sys.game.config.width;
-        let heigth = this.sys.game.config.height;
+        let height = this.sys.game.config.height;
         
         
         // Background con forma de cuaderno
         var background = this.add.image(0, 0, "background");
         background.setOrigin(0);
-        background.setDisplaySize(width, heigth);
+        background.setDisplaySize(width, height);
         
         // Tinta
-        var renderTex = this.add.renderTexture(0, 0, width, heigth);
+        var renderTex = this.add.renderTexture(0, 0, width, height);
         var boli = this.textures.getFrame('tinta');
         var hsv = Phaser.Display.Color.HSVColorWheel();
         this.input.on('pointermove', function (pointer) {
@@ -36,7 +36,7 @@ export default class Zen extends Phaser.Scene {
         }, this);
         
         // Timer
-        this.timerText = this.add.text(width * 0.5, heigth * 0.1, "", { font: "72px adventpro", fill: "#222222" });
+        this.timerText = this.add.text(width * 0.5, height * 0.1, "", { font: "72px adventpro", fill: "#222222" });
         this.tim = this.time.delayedCall(100000, () => goMenu(this), [], this);
         
         // Declarar fruit
@@ -62,12 +62,15 @@ export default class Zen extends Phaser.Scene {
 
         for (var i = 0; i < this.fruit.length; ++i) {
             if (pointer.isDown) {
-                this.fruit[i].on('pointerover', () => this.fruit[i].corte());
-            }
+                var wid = this.fruit[i].width;
+                var hei = this.fruit[i].height;
+                var posX = this.fruit[i].x - wid / 2;
+                var posY = this.fruit[i].y - hei / 2;
 
-            if (this.fruit[i].y < 250) {
-                this.fruit[i].corte();
-                this.fruit.splice(i, 1);
+                if (posX < pointer.x && posX + wid > pointer.x && posY < pointer.y && posY + hei > pointer.y) {
+                    this.fruit[i].corte();
+                    this.fruit.splice(i, 1);
+                }
             }
 
             if (this.fruit[i] != null && this.fruit[i].y > 800) {
