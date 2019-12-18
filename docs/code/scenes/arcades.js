@@ -1,4 +1,4 @@
-import Fruit from "../objects/fruit.js"
+import MenuFruit from "../objects/menuFruit.js"
 
 var colour = 60;
 
@@ -34,7 +34,7 @@ export default class Arcades extends Phaser.Scene {
         }, this);
 
         // Frutas
-        var frutilla = new Fruit(this, 123, 231, "moraA");
+        var frutilla = new MenuFruit(this, 123, 231, "moraA");
     }
 
     update(time, delta) {
