@@ -8,12 +8,12 @@ export default class CuttedFruit extends Phaser.GameObjects.Sprite {
         // Propiedades
         this.body.setAcceleration(vel, -45);
 
-        this.setScale(0.2);
+        this.setScale(1);
         this.setOrigin(0.5);
     }
     
-    update(time, delta) {
-        if (this.y > this.scene.sys.game.config.height) {
+    preUpdate(time, delta) {
+        if (this.y > this.scene.sys.game.config.height + 300) {
             this.muerte()
         }
     }
