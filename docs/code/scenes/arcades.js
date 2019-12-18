@@ -56,10 +56,19 @@ export default class Arcades extends Phaser.Scene {
             colour = 60;
         }
 
-        // Spawner de frutas
-        var randomF = Phaser.Math.Between(0, 50);
-        var randomB = Phaser.Math.Between(0, 100);
+        var randomF;
+        var randomB;
+        // Dificultad
+        if (score < 100) {
+            randomF = Phaser.Math.Between(0, 100);
+            randomB = Phaser.Math.Between(0, 300);
+        }
+        else {
+            randomF = Phaser.Math.Between(0, 60);
+            randomB = Phaser.Math.Between(0, 150);
+        }
 
+        // Spawner de frutas
         if (randomF == 0) {
             var randomX = Phaser.Math.Between(0, this.sys.game.config.width);
             var randomFruit = Phaser.Math.Between(0, 17);
@@ -67,7 +76,7 @@ export default class Arcades extends Phaser.Scene {
         }
         if (randomB == 0) {
             var randomX = Phaser.Math.Between(0, this.sys.game.config.width);
-            this.fruit.push(new Fruit(this, randomX, this.sys.game.config.height, "bomba"));
+            this.bombs.push(new Fruit(this, randomX, this.sys.game.config.height, "bomba"));
         }
 
         for (var i = 0; i < this.fruit.length; ++i) {
