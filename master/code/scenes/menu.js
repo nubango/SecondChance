@@ -93,6 +93,7 @@ export default class Menu extends Phaser.Scene {
     }
     toCredits()
     {
+        // Cambia a la escena de creditos
         this.scene.start("CREDITS");
     }
 }

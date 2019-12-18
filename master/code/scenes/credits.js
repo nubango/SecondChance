@@ -16,5 +16,18 @@ export default class Credits extends Phaser.Scene {
         var background = this.add.image(0, 0, "creditsBG");
         background.setOrigin(0);
         background.setDisplaySize(width, heigth);
+
+        // Boton de exit
+        var exitButton = this.add.image(40, 40, 'exit_button');
+        exitButton.setScale(0.05, 0.05);
+        exitButton.setInteractive();
+        exitButton.on('pointerdown', () => this.toMenu());
+    }
+
+    toMenu()
+    {
+        // Veulve al menu principal
+        this.scene.start("MENU");
     }
 }
+
