@@ -17,7 +17,7 @@ export default class Menu extends Phaser.Scene {
         let center_heigth = this.sys.game.config.height / 2;
 
         // Background con forma de cuaderno
-        var background = this.add.image(0, 0, "background");
+        var background = this.add.image(0, 0, "mainMenuBG");
         background.setOrigin(0);
         background.setDisplaySize(width, heigth);
         
@@ -44,25 +44,21 @@ export default class Menu extends Phaser.Scene {
 
 
         // Boton de arcade
-        const arcadeButton = this.add.text(width * 0.2, heigth * 0.7, "Arcade", { font: "96px adventpro", fill: "#222222" });
+        var arcadeButton = this.add.image(width * 0.2, heigth * 0.7, 'arcade_button');
+        arcadeButton.setScale(1, 1);
         arcadeButton.setInteractive();
-        arcadeButton.on('pointerover', () => arcadeButton.setStyle({ fill: '#000000'}));
-        arcadeButton.on('pointerout', () => arcadeButton.setStyle({ fill: '#222222'}));
-        arcadeButton.on('pointerdown', () => this.startArcade());
+        arcadeButton.on('pointerdown', () => this.startArcade());;
         
         // Boton de zen
-        const zenButton = this.add.text(width * 0.6, heigth * 0.7, "Zen", { font: "96px adventpro", fill: "#222222" });
+        var zenButton = this.add.image(width * 0.8, heigth * 0.7, 'zen_button');
+        zenButton.setScale(1, 1);
         zenButton.setInteractive();
-        zenButton.on('pointerover', () => zenButton.setStyle({ fill: '#000000'}));
-        zenButton.on('pointerout', () => zenButton.setStyle({ fill: '#222222'}));
-        zenButton.on('pointerdown', () => this.startZen());
+        zenButton.on('pointerdown', () => this.startZen());;
 
         // Boton de creditos
         var creditsButton = this.add.image(40, 40, 'info_button');
         creditsButton.setScale(0.02, 0.02);
         creditsButton.setInteractive();
-        creditsButton.on('pointerover', () => zenButton.setStyle({ fill: '#000000'}));
-        creditsButton.on('pointerout', () => zenButton.setStyle({ fill: '#222222'}));
         creditsButton.on('pointerdown', () => this.toCredits());
 
     }
