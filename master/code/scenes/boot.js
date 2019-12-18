@@ -78,6 +78,14 @@ export default class Boot extends Phaser.Scene {
     this.load.image("sandia", "./resources/images/fruits/watermelon.png");
     this.load.image("sandiaA", "./resources/images/fruits/watermelonA.png");
     this.load.image("sandiaB", "./resources/images/fruits/watermelonB.png");
+    // Musica
+    this.load.audio('menu_theme',"./resources/music/main_menu_music.wav");
+    this.load.audio('arcade_theme',"./resources/music/arcade_music.wav");
+    this.load.audio('zen_theme',"./resources/music/zen_music.wav");
+    // FX
+    this.load.audio('cutFX',"./resources/sounds/cut.wav");
+    this.load.audio('bombFX',"./resources/sounds/bomb_explosion.mp3");
+    this.load.audio('jumpFX',"./resources/sounds/jump.mp3");
     // Tinta
     this.load.image("tinta", "./resources/images/punto-azulB.png");
   }

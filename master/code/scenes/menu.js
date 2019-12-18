@@ -11,6 +11,8 @@ var zenScoreText;
 
 var keySpace;
 
+var music;
+
 export default class Menu extends Phaser.Scene {
     constructor() {
         super({ key: "MENU" });
@@ -48,6 +50,10 @@ export default class Menu extends Phaser.Scene {
         // Input
         keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         
+        // Music
+        this.music = this.sound.add('menu_theme', {loop: true});
+        this.music.play();
+
         // Tinta
         var renderTex = this.add.renderTexture(0, 0, width, heigth);
         var boli = this.textures.getFrame('tinta');
@@ -93,10 +99,12 @@ export default class Menu extends Phaser.Scene {
 
     // Salto a escenas
     startArcade() {
+        this.music.stop();
         // Empieza la ecena arcade
         this.scene.start("ARCADES");
     }
     startZen() {
+        this.music.stop();
         // Empieza la ecena zen
         this.scene.start("ZEN");
     }
