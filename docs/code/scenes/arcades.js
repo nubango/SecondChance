@@ -109,6 +109,7 @@ export default class Arcades extends Phaser.Scene {
 
         // Comprobar las colisiones de las bombas
         for (var i = 0; i < this.bombs.length; ++i) {
+            // Con el jugador
             if (pointer.isDown) {
                 var wid = this.bombs[i].width;
                 var hei = this.bombs[i].height;
@@ -121,6 +122,11 @@ export default class Arcades extends Phaser.Scene {
                     // Actualiza los puntoss
                     this.vidas--;
                 }
+            }
+
+            // Con la deadzone
+            if (this.bombs[i] != null && this.bombs[i].y > this.sys.game.config.height + 100) {
+                this.bombs.splice(i, 1);
             }
         }
 
