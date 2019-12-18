@@ -34,7 +34,7 @@
         width: 1000px;
         height: 500px;
         z-index: 1;
-        /* background: url(../resources/images/web/1000x500_giro.png); */
+        background: url(../resources/images/web/1000x500_giro.png);
         opacity: 0.8;
         background-size: cover;
         background-position: center;
