@@ -1,6 +1,6 @@
 export default class CuttedButton extends Phaser.GameObjects.Sprite {
-    constructor(scene, x, y, type, vel) {
-        super(scene, x, y, type);
+    constructor(scene, x, y, vel) {
+        super(scene, x, y);
         // Fisicas
         scene.add.existing(this);
         scene.physics.world.enable(this);

@@ -1,20 +1,9 @@
 import CuttedButton from "./cuttedButton.js"
 
-export default class MenuFruit extends Phaser.GameObjects.Sprite {
-    constructor(scene, x, y, type, vel) {
-        super(scene, x, y, type);
-
-        this.name = type;
-        // Fisicas
-        scene.add.existing(this);
-        scene.physics.world.enable(this);
-        scene.physics.add.existing(this);
-        // Propiedades
-        this.body.setCollideWorldBounds();
-        this.body.setBounce(1);
-        this.body.setAcceleration(vel, 0);
-
-        
+export default class MenuButton extends Phaser.GameObjects.Sprite {
+    constructor(scene, x, y) {
+        super(scene, x, y);
+ 
         this.flipX = false;
         this.setScale(0.2);
         this.setOrigin(0.5);
@@ -26,9 +15,9 @@ export default class MenuFruit extends Phaser.GameObjects.Sprite {
     }
 
     corte() {
-        if (this.cutedFruitA == null && this.cutedFruitB == null) {
-            this.cutedFruitA = new CuttedFruit(this.scene, this.x, this.y, this.name + "A", -100);
-            this.cutedFruitB = new CuttedFruit(this.scene, this.x, this.y, this.name + "B", 100);
+        if (this.cutedButtonA == null && this.cutedButtonB == null) {
+            this.cutedButtonA = new CuttedButton(this.scene, this.x, this.y, this.name + "A", -100);
+            this.cutedButtonB = new CuttedButton(this.scene, this.x, this.y, this.name + "B", 100);
             this.muerte();
         }
     }

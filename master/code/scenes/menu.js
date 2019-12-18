@@ -1,4 +1,5 @@
 import MenuFruit from "../objects/menuFruit.js"
+import MenuButton from "../objects/menuButton.js"
 
 // Variables globales
 var colour = 60;
@@ -73,6 +74,8 @@ export default class Menu extends Phaser.Scene {
         if (pointer.isDown) {
             this.platano.on('pointerover', () => this.platano.corte());
             this.mora.on('pointerover', () => this.mora.corte());
+            //this.zenButton.on('pointerover', () => this.zenButton.corte());
+            //this.arcadeButton.on('pointerover', () => this.arcadeButton.corte());
         }
     }
 
