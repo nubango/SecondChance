@@ -3,13 +3,14 @@ import Menu from "./scenes/menu.js";
 import Arcades from "./scenes/arcades.js";
 import Zen from "./scenes/zen.js";
 import End from "./scenes/end.js";
+import Credits from "./scenes/credits.js";
 
 const config = {
     width: 1000,
     height: 500,
     parent: "horizontal",
     type: Phaser.AUTO,
-    scene: [Boot, Menu, Arcades, Zen, End],
+    scene: [Boot, Menu, Arcades, Zen, End, Credits],
     physics: {
         default: "arcade",
         arcade: {

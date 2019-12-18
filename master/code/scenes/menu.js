@@ -56,7 +56,15 @@ export default class Menu extends Phaser.Scene {
         zenButton.on('pointerover', () => zenButton.setStyle({ fill: '#000000'}));
         zenButton.on('pointerout', () => zenButton.setStyle({ fill: '#222222'}));
         zenButton.on('pointerdown', () => this.startZen());
-        
+
+        // Boton de creditos
+        var creditsButton = this.add.image(40, 40, 'info_button');
+        creditsButton.setScale(0.02, 0.02);
+        creditsButton.setInteractive();
+        creditsButton.on('pointerover', () => zenButton.setStyle({ fill: '#000000'}));
+        creditsButton.on('pointerout', () => zenButton.setStyle({ fill: '#222222'}));
+        creditsButton.on('pointerdown', () => this.toCredits());
+
     }
     
     update(time, delta) {
@@ -82,5 +90,9 @@ export default class Menu extends Phaser.Scene {
     startZen() {
         // Empieza la ecena zen
         this.scene.start("ZEN");
+    }
+    toCredits()
+    {
+        this.scene.start("CREDITS");
     }
 }

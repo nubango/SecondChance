@@ -7,10 +7,13 @@ export default class Boot extends Phaser.Scene {
     this.load.on("complete", () => { this.scene.start("MENU"); })
     
     // < Carga de imagenes >
-    // Background
+    // Backgrounds
     this.load.image("background", "./resources/images/background.jpg");
+    this.load.image("creditsBG", "./resources/images/creditos.png");
     // Logo
     this.load.image("logo", "./resources/images/web/OrigamiSlashBig.png");
+    // Boton de info
+    this.load.image("info_button", "./resources/images/menu/info_button.png")
     // Frutas
     this.load.image("platano", "./resources/images/fruits/banana.png");
     this.load.image("platanoA", "./resources/images/fruits/bananaA.png");
